@@ -11,6 +11,7 @@
 		2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F14CE2B763A0600249395 /* SceneDelegate.swift */; };
 		2B8F14D12B763A0600249395 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F14D02B763A0600249395 /* ViewController.swift */; };
 		2B8F14D62B763A0800249395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8F14D52B763A0800249395 /* Assets.xcassets */; };
+		2B9402482B79120B00687FE8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9402472B79120B00687FE8 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		2B8F14D02B763A0600249395 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B8F14D52B763A0800249395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B8F14DA2B763A0800249395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B9402472B79120B00687FE8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,7 @@
 		2B8F14CB2B763A0600249395 /* Tikameshi */ = {
 			isa = PBXGroup;
 			children = (
-				2BA2E4912B76744800C0D399 /* Extension */,
+				2B9402462B7911F300687FE8 /* Extension */,
 				2B8F14E02B763A3800249395 /* Model */,
 				2B8F14E12B763A4200249395 /* View */,
 				2B8F14E22B763A4900249395 /* Controller */,
@@ -86,9 +88,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		2BA2E4912B76744800C0D399 /* Extension */ = {
+		2B9402462B7911F300687FE8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2B9402472B79120B00687FE8 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				2B8F14D12B763A0600249395 /* ViewController.swift in Sources */,
 				2B8F14CD2B763A0600249395 /* AppDelegate.swift in Sources */,
 				2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */,
+				2B9402482B79120B00687FE8 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
 extension UIColor {
-    static let navigationbarBGColor =  UIColor(named: "Navigationbarbgcolor")
-    static let vcBGColor = UIColor(named: "VCbgcolor")
+    static let navbarSCColor = UIColor(named: "NavbarSCbgcolor")
+    static let vcColor = UIColor(named: "VCbgcolor")
 }

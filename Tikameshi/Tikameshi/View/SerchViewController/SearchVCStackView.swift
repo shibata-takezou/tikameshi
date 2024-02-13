@@ -15,19 +15,17 @@ class SearchVCStackView: UIStackView {
         label.font = UIFont.systemFont(ofSize: 15)
         return label
     }
-    var distanceSC: DistanceSegmentedControl!
-    let distance = ["300m","500m","1000m","2000m","3000m"]
-    var searchButton: SearchButton!
+    var distanceSC: DistanceSegmentedControl = {
+        let distance = ["300m","500m","1000m","2000m","3000m"]
+        let distanceSC = DistanceSegmentedControl(items: distance)
+        distanceSC.translatesAutoresizingMaskIntoConstraints = false
+        return distanceSC
+    }()
+    var searchButton = SearchButton()
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addArrangedSubview(self.label)
-        self.distanceSC = DistanceSegmentedControl(items: self.distance)
         self.addArrangedSubview(self.distanceSC)
-        self.distanceSC.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.distanceSC.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95)
-        ])
-        self.searchButton = SearchButton()
         self.addArrangedSubview(self.searchButton)
         self.axis = .vertical
         self.alignment = .center

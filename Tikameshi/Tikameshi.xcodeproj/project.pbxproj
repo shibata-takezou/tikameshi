@@ -15,6 +15,7 @@
 		2B94024A2B7914E400687FE8 /* DistanceSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9402492B7914E400687FE8 /* DistanceSegmentedControl.swift */; };
 		2B94024C2B7A570200687FE8 /* ScreenTransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94024B2B7A570200687FE8 /* ScreenTransitionButton.swift */; };
 		2B94024F2B7A5DA000687FE8 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94024E2B7A5DA000687FE8 /* SearchButton.swift */; };
+		2BA0D43D2B7B6C6200ED76EA /* SearchVCStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2B9402492B7914E400687FE8 /* DistanceSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSegmentedControl.swift; sourceTree = "<group>"; };
 		2B94024B2B7A570200687FE8 /* ScreenTransitionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionButton.swift; sourceTree = "<group>"; };
 		2B94024E2B7A5DA000687FE8 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				2B9402492B7914E400687FE8 /* DistanceSegmentedControl.swift */,
 				2B94024E2B7A5DA000687FE8 /* SearchButton.swift */,
+				2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */,
 			);
 			path = SerchViewController;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				2B94024F2B7A5DA000687FE8 /* SearchButton.swift in Sources */,
 				2B8F14D12B763A0600249395 /* SearchViewController.swift in Sources */,
+				2BA0D43D2B7B6C6200ED76EA /* SearchVCStackView.swift in Sources */,
 				2B8F14CD2B763A0600249395 /* AppDelegate.swift in Sources */,
 				2B94024C2B7A570200687FE8 /* ScreenTransitionButton.swift in Sources */,
 				2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */,

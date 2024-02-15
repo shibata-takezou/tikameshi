@@ -14,11 +14,6 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "検索"
-        self.restaurantManager.fetchLocation(lat: 35.09241565345719, lng: 136.92578109761166) { restaurants in
-            DispatchQueue.main.async {
-                self.restaurants = restaurants
-            }
-        }
         self.view.addSubview(self.searchVCStackView)
         self.searchVCStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

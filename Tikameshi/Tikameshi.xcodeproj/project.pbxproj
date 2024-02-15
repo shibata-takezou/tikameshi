@@ -16,6 +16,8 @@
 		2B94024C2B7A570200687FE8 /* ScreenTransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94024B2B7A570200687FE8 /* ScreenTransitionButton.swift */; };
 		2B94024F2B7A5DA000687FE8 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94024E2B7A5DA000687FE8 /* SearchButton.swift */; };
 		2BA0D43D2B7B6C6200ED76EA /* SearchVCStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */; };
+		2BAA02532B7CBA35009D27CA /* RestaurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA02522B7CBA35009D27CA /* RestaurantManager.swift */; };
+		2BAA02552B7CC66F009D27CA /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA02542B7CC66F009D27CA /* RestaurantData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2B94024B2B7A570200687FE8 /* ScreenTransitionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionButton.swift; sourceTree = "<group>"; };
 		2B94024E2B7A5DA000687FE8 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCStackView.swift; sourceTree = "<group>"; };
+		2BAA02522B7CBA35009D27CA /* RestaurantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantManager.swift; sourceTree = "<group>"; };
+		2BAA02542B7CC66F009D27CA /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		2B8F14E02B763A3800249395 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BAA02522B7CBA35009D27CA /* RestaurantManager.swift */,
+				2BAA02542B7CC66F009D27CA /* RestaurantData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,8 +197,10 @@
 				2B8F14CD2B763A0600249395 /* AppDelegate.swift in Sources */,
 				2B94024C2B7A570200687FE8 /* ScreenTransitionButton.swift in Sources */,
 				2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */,
+				2BAA02552B7CC66F009D27CA /* RestaurantData.swift in Sources */,
 				2B94024A2B7914E400687FE8 /* DistanceSegmentedControl.swift in Sources */,
 				2B9402482B79120B00687FE8 /* UIColor+Extension.swift in Sources */,
+				2BAA02532B7CBA35009D27CA /* RestaurantManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

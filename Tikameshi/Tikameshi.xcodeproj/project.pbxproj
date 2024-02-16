@@ -332,6 +332,7 @@
 				DEVELOPMENT_TEAM = 2GSZ3KSUC2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tikameshi/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "近くのレストランを探すため位置情報を取得します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
@@ -362,6 +363,7 @@
 				DEVELOPMENT_TEAM = 2GSZ3KSUC2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tikameshi/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "近くのレストランを探すため位置情報を取得します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;

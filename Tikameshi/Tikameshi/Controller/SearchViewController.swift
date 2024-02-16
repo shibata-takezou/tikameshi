@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     var searchVCStackView = SearchVCStackView(frame: CGRect())
     var restaurants = [Restaurant]()
-    var restaurantManager = RestaurantManager()
+    let restaurantManager = RestaurantManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "検索"

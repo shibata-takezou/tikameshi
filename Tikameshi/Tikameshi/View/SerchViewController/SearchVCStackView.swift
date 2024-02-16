@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SearchVCStackView: UIStackView {
     let labelText = "現在地から検索する距離を選択してください"
     let restaurantManager = RestaurantManager()
     var restaurants = [Restaurant]()
     var range = 3 //初期値1000m
+    var lat = 0.0
+    var lng = 0.0
     var label: UILabel {
         let label = UILabel()
         label.text = self.labelText
@@ -30,8 +33,12 @@ class SearchVCStackView: UIStackView {
         button.addTarget(self, action: #selector(screenTransition(_:)), for: .touchUpInside)
         return button
     }
+    let locationManager = CLLocationManager()
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         self.addArrangedSubview(self.label)
         self.addArrangedSubview(self.distanceSC)
         self.addArrangedSubview(self.searchButton)
@@ -59,11 +66,22 @@ class SearchVCStackView: UIStackView {
         }
     }
     @objc func screenTransition(_ sender: UIButton) {
-        self.restaurantManager.fetchLocation(lat: 35.09241565345719, lng: 136.92578109761166, range: self.range) { restaurants in
+        self.restaurantManager.fetchLocation(lat: self.lat, lng: self.lng, range: self.range) { restaurants in
             DispatchQueue.main.async {
                 self.restaurants = restaurants
                 print(self.restaurants[0].name)
             }
         }
+    }
+}
+extension SearchVCStackView: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            self.lat = location.coordinate.latitude
+            self.lng = location.coordinate.longitude
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error: \(error)")
     }
 }

@@ -17,6 +17,7 @@
 		2BA0D43D2B7B6C6200ED76EA /* SearchVCStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */; };
 		2BAA02532B7CBA35009D27CA /* RestaurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA02522B7CBA35009D27CA /* RestaurantManager.swift */; };
 		2BAA02552B7CC66F009D27CA /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA02542B7CC66F009D27CA /* RestaurantData.swift */; };
+		2BB6F0BF2B809F4300EC8F3D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6F0BE2B809F4300EC8F3D /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2BA0D43C2B7B6C6200ED76EA /* SearchVCStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCStackView.swift; sourceTree = "<group>"; };
 		2BAA02522B7CBA35009D27CA /* RestaurantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantManager.swift; sourceTree = "<group>"; };
 		2BAA02542B7CC66F009D27CA /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
+		2BB6F0BE2B809F4300EC8F3D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8F14D02B763A0600249395 /* SearchViewController.swift */,
+				2BB6F0BE2B809F4300EC8F3D /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				2B8F14CD2B763A0600249395 /* AppDelegate.swift in Sources */,
 				2B94024C2B7A570200687FE8 /* ScreenTransitionButton.swift in Sources */,
 				2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */,
+				2BB6F0BF2B809F4300EC8F3D /* ResultViewController.swift in Sources */,
 				2BAA02552B7CC66F009D27CA /* RestaurantData.swift in Sources */,
 				2B94024A2B7914E400687FE8 /* DistanceSegmentedControl.swift in Sources */,
 				2B9402482B79120B00687FE8 /* UIColor+Extension.swift in Sources */,

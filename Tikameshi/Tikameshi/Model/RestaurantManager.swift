@@ -11,7 +11,6 @@ class RestaurantManager {
     let restaurantURL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(ProcessInfo.processInfo.environment["API_KEY"] ?? "")&format=json"
     func fetchLocation(lat: Double, lng: Double, range: Int, completion: @escaping(([Restaurant]) -> Void)) {
         let urlString = "\(self.restaurantURL)&lat=\(lat)&lng=\(lng)&range=\(range)"
-        print("\(urlString)")
         self.performRequest(urlString: urlString, completion: completion)
     }
     func performRequest(urlString: String, completion: @escaping(([Restaurant]) -> Void)) {

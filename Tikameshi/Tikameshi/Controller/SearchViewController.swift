@@ -31,6 +31,9 @@ class SearchViewController: UIViewController {
             self.searchVCStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0)
         ])
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.isUserInteractionEnabled = true
+    }
     @objc func segmentChanged(_ segment: UISegmentedControl) {
         switch segment.selectedSegmentIndex {
         case 0:
@@ -48,11 +51,10 @@ class SearchViewController: UIViewController {
         }
     }
     @objc func screenTransition(_ sender: UIButton) {
-        print("ボタンが押されたよ")
+        self.view.isUserInteractionEnabled = false
         self.restaurantManager.fetchLocation(lat: self.lat, lng: self.lng, range: self.range) { restaurants in
             DispatchQueue.main.async {
                 self.restaurants = restaurants
-                print(self.restaurants[0].name)
                 let resultVC = ResultViewController()
                 resultVC.restaurant = self.restaurants
                 self.navigationController?.pushViewController(resultVC, animated: true)

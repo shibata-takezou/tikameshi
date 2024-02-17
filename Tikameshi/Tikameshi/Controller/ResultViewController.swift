@@ -8,10 +8,13 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    var restaurant = [Restaurant]()
+    var restaurants = [Restaurant]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "結果"
         self.view.backgroundColor = .vcColor
+        var logoImageView = LogoImageView(logoImageURL: restaurants[1].logo_image)
+        self.view.addSubview(logoImageView)
+        
     }
 }

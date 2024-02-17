@@ -56,7 +56,7 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 self.restaurants = restaurants
                 let resultVC = ResultViewController()
-                resultVC.restaurant = self.restaurants
+                resultVC.restaurants = self.restaurants
                 self.navigationController?.pushViewController(resultVC, animated: true)
             }
         }

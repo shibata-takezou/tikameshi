@@ -8,30 +8,32 @@
 import UIKit
 
 class RestaurantCollectionViewCell: UICollectionViewCell {
-    private var cellImageView = UIImageView()
+    private var resultCard: ResultCard?
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private func setup() {
-        self.contentView.addSubview(cellImageView)
-        self.cellImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.cellImageView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1.0),
-            self.cellImageView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 1.0),
-            self.cellImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
-            self.cellImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 0),
-        ])
-    }
-    func setUpContents(imageURL: String) {
+    func setUpContents(imageURL: String, name: String, access: String) {
         let logoImageView = LogoImageView(logoImageURL: imageURL)
-        logoImageView.loadImageFromURL(url: URL(string: imageURL)!) { image in
+        logoImageView.loadImageFromURL(url: URL(string: imageURL)!) { [weak self] image in
+            guard let self = self else { return }
+            
             DispatchQueue.main.async {
-                self.cellImageView.image = image
+                self.resultCard?.removeFromSuperview()
+                let newResultCard = ResultCard(logoImageView: logoImageView, name: name, access: access)
+                self.contentView.addSubview(newResultCard)
+                newResultCard.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    newResultCard.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+                    newResultCard.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+                    newResultCard.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+                    newResultCard.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+                ])
+                self.resultCard = newResultCard
             }
         }
+        
     }
 }

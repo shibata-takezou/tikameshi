@@ -21,6 +21,13 @@ class ResultViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         self.view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+        ])
     }
 }
 extension ResultViewController: UICollectionViewDelegate {
@@ -37,17 +44,15 @@ extension ResultViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell",for: indexPath as IndexPath) as! RestaurantCollectionViewCell
-        cell.setUpContents(imageURL: restaurants[indexPath.row].logo_image)
+        cell.setUpContents(imageURL: restaurants[indexPath.row].logo_image, name: restaurants[indexPath.row].name, access: restaurants[indexPath.row].mobile_access)
         return cell
     }
 }
 extension ResultViewController:  UICollectionViewDelegateFlowLayout {
-    // セルの大きさ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 400, height: 400)
+        return CGSize(width: self.view.frame.width * 0.95, height: 100)
     }
-    // セルの余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
 }

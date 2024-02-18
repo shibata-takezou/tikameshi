@@ -32,7 +32,9 @@ class ResultViewController: UIViewController {
 }
 extension ResultViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(restaurants[indexPath.row].name)
+        let detailVC = DetailViewController()
+        detailVC.restaurant = restaurants[indexPath.row]
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 extension ResultViewController: UICollectionViewDataSource {

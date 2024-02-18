@@ -9,7 +9,7 @@ import UIKit
 
 class LogoImageView: UIImageView {
     init(logoImageURL: String) {
-        super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        super.init(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
         let imageURL = URL(string: logoImageURL)!
         loadImageFromURL(url: imageURL) { image in
             if let image = image {

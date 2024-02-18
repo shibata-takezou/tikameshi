@@ -8,7 +8,7 @@
 import Foundation
 
 class RestaurantManager {
-    let restaurantURL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(ProcessInfo.processInfo.environment["API_KEY"] ?? "")&format=json"
+    let restaurantURL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(ProcessInfo.processInfo.environment["API_KEY"] ?? "")&format=json&count=100"
     func fetchLocation(lat: Double, lng: Double, range: Int, completion: @escaping(([Restaurant]) -> Void)) {
         let urlString = "\(self.restaurantURL)&lat=\(lat)&lng=\(lng)&range=\(range)"
         self.performRequest(urlString: urlString, completion: completion)

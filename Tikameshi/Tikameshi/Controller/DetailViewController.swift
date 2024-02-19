@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = "詳細"
         self.view.backgroundColor = .vcColor
-        self.detailVCStackView = DetailVCView(name: restaurant.name, address: restaurant.address, open: restaurant.open, topImageView: LogoImageView(logoImageURL: restaurant.photo.mobile.l))
+        self.detailVCStackView = DetailVCView(name: restaurant.name, address: restaurant.address, open: restaurant.open, topImageView: URLImageView(logoImageURL: restaurant.photo.mobile.l))
         self.view.addSubview(self.detailVCStackView)
         self.detailVCStackView.translatesAutoresizingMaskIntoConstraints = false
         self.mapAppButton.addTarget(self, action: #selector(self.transitionApp(_:)), for: .touchUpInside)

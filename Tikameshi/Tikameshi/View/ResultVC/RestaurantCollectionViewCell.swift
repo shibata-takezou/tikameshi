@@ -16,7 +16,7 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func setUpContents(imageURL: String, name: String, access: String) {
-        let logoImageView = LogoImageView(logoImageURL: imageURL)
+        let logoImageView = URLImageView(logoImageURL: imageURL)
         logoImageView.loadImageFromURL(url: URL(string: imageURL)!) { [weak self] image in
             guard let self = self else { return }
             DispatchQueue.main.async {

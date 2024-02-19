@@ -45,7 +45,7 @@ class ResultCard: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    init(logoImageView: LogoImageView, name: String, access: String) {
+    init(logoImageView: URLImageView, name: String, access: String) {
         super.init(frame: CGRect())
         self.backgroundColor = .white
         self.logoImageView = logoImageView

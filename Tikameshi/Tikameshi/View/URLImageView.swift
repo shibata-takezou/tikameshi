@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogoImageView: UIImageView {
+class URLImageView: UIImageView {
     init(logoImageURL: String) {
         super.init(frame: CGRect())
         let imageURL = URL(string: logoImageURL)!

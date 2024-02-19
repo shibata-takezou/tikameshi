@@ -33,7 +33,7 @@ class DetailVCView: UIStackView {
         return label
     }()
     var topImageView = UIImageView()
-    init(name: String, address: String, open: String, topImageView: LogoImageView) {
+    init(name: String, address: String, open: String, topImageView: URLImageView) {
         super.init(frame: CGRect())
         self.name.text = name
         self.address.text = address

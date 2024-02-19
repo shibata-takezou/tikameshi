@@ -20,8 +20,6 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.title = "検索"
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
         self.searchVCStackView.distanceSC.addTarget(self, action: #selector(self.segmentChanged(_:)), for: .valueChanged)
         self.searchVCStackView.searchButton.addTarget(self, action: #selector(self.screenTransition(_:)), for: .touchUpInside)
         self.view.addSubview(self.searchVCStackView)
@@ -30,6 +28,7 @@ class SearchViewController: UIViewController {
             self.searchVCStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
             self.searchVCStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0)
         ])
+        checkLocationAuthorization()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.view.isUserInteractionEnabled = true
@@ -60,6 +59,35 @@ class SearchViewController: UIViewController {
                 self.navigationController?.pushViewController(resultVC, animated: true)
             }
         }
+    }
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse, .authorizedAlways:
+            self.locationManager.startUpdatingLocation()
+            self.searchVCStackView.searchButton.isEnabled = true
+            self.searchVCStackView.searchButton.setTitle("検索", for: .normal)
+        case .notDetermined, .denied, .restricted:
+            self.searchVCStackView.searchButton.isEnabled = false
+            self.searchVCStackView.searchButton.setTitle("位置情報を許可してください", for: .normal)
+            showLocationPermissionAlert()
+        @unknown default:
+            fatalError("CLLocationManager authorizationStatus has an unknown value.")
+        }
+    }
+    func showLocationPermissionAlert() {
+        let alertController = UIAlertController(title: "位置情報の許可が必要です", message: "アプリを使用するには位置情報の許可が必要です。設定から位置情報の許可を許可してください。", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "設定", style: .default) { _ in
+            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+        
     }
 }
 extension SearchViewController: CLLocationManagerDelegate {

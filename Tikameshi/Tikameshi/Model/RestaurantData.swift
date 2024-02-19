@@ -19,4 +19,13 @@ struct Restaurant: Decodable {
     let address: String
     let mobile_access: String
     let open: String
+    let lat: Double
+    let lng: Double
+    let photo: Photo
+}
+struct Photo: Decodable {
+    let mobile: Mobile
+}
+struct Mobile: Decodable {
+    let l: String
 }

@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = "詳細"
         self.view.backgroundColor = .vcColor
-        self.detailVCStackView = DetailVCView(name: restaurant.name, address: restaurant.address, open: restaurant.open, topImageView: LogoImageView(logoImageURL: restaurant.logo_image))
+        self.detailVCStackView = DetailVCView(name: restaurant.name, address: restaurant.address, open: restaurant.open, topImageView: LogoImageView(logoImageURL: restaurant.photo.mobile.l))
         self.view.addSubview(self.detailVCStackView)
         self.detailVCStackView.translatesAutoresizingMaskIntoConstraints = false
         self.mapAppButton.addTarget(self, action: #selector(self.transitionApp(_:)), for: .touchUpInside)
@@ -31,5 +31,7 @@ class DetailViewController: UIViewController {
     }
     @objc func transitionApp(_ sender: UIButton) {
         print("mapアプリへ移動します。")
+        print("lat:\(restaurant.lat)")
+        print("lng:\(restaurant.lng)")
     }
 }

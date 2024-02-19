@@ -41,7 +41,10 @@ class RestaurantManager {
                 let address = shop.address
                 let mobile_access = shop.mobile_access
                 let open = shop.open
-                restaurants.append(Restaurant(name: name, logo_image: logo_image, address: address, mobile_access: mobile_access, open: open))
+                let lng = shop.lng
+                let lat = shop.lat
+                let photo = shop.photo
+                restaurants.append(Restaurant(name: name, logo_image: logo_image, address: address, mobile_access: mobile_access, open: open, lat: lat, lng: lng, photo: photo))
             }
         } catch {
             print(error)

@@ -33,5 +33,10 @@ class DetailViewController: UIViewController {
         print("mapアプリへ移動します。")
         print("lat:\(restaurant.lat)")
         print("lng:\(restaurant.lng)")
+        let daddr = NSString(format: "%f,%f", self.restaurant.lat, self.restaurant.lng)
+        let urlString = "http://maps.apple.com/?daddr=\(daddr)&dirflg=w"
+        let encodedUrl = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = NSURL(string: encodedUrl!)!
+        UIApplication.shared.open(url as URL)
     }
 }

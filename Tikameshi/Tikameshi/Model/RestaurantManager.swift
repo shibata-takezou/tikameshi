@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class RestaurantManager {
     let restaurantURL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(ProcessInfo.processInfo.environment["API_KEY"] ?? "")&format=json&count=100"
@@ -17,8 +18,18 @@ class RestaurantManager {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error!)
+                if let error = error {
+                    print("Error fetching data: \(error)")
+                    DispatchQueue.main.async {
+                        if let viewController = UIApplication.shared.keyWindow?.rootViewController {
+                            let alert = UIAlertController(title: "エラー", message: "検索処理でエラーが発生しました。もう一度お試しください。", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                                viewController.loadView()
+                                viewController.viewDidLoad()
+                            }))
+                            viewController.present(alert, animated: true, completion: nil)
+                        }
+                    }
                     completion([])
                     return
                 }

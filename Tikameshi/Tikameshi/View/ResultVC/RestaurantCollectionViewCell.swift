@@ -19,7 +19,6 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         let logoImageView = LogoImageView(logoImageURL: imageURL)
         logoImageView.loadImageFromURL(url: URL(string: imageURL)!) { [weak self] image in
             guard let self = self else { return }
-            
             DispatchQueue.main.async {
                 self.resultCard?.removeFromSuperview()
                 let newResultCard = ResultCard(logoImageView: logoImageView, name: name, access: access)

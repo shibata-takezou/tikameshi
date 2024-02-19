@@ -37,12 +37,15 @@ class DetailVCView: UIStackView {
         super.init(frame: CGRect())
         self.name.text = name
         self.address.text = address
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
-        let openText = NSAttributedString(string: open, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        self.open.attributedText = openText
+        self.labelLinesSetUP(word: open)
         self.topImageView = topImageView
         self.setUP()
+    }
+    private func labelLinesSetUP(word: String) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 8
+        let openText = NSAttributedString(string: word, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        self.open.attributedText = openText
     }
     private func setUP() {
         self.axis = .vertical

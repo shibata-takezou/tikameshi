@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B52022E2B8269A6004F5EC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52022D2B8269A6004F5EC1 /* DetailViewController.swift */; };
+		2B5202312B82E159004F5EC1 /* DetailVCStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5202302B82E159004F5EC1 /* DetailVCStackView.swift */; };
 		2B8F14CD2B763A0600249395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F14CC2B763A0600249395 /* AppDelegate.swift */; };
 		2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F14CE2B763A0600249395 /* SceneDelegate.swift */; };
 		2B8F14D12B763A0600249395 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F14D02B763A0600249395 /* SearchViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		2B52022D2B8269A6004F5EC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2B5202302B82E159004F5EC1 /* DetailVCStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCStackView.swift; sourceTree = "<group>"; };
 		2B8F14C92B763A0600249395 /* Tikameshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tikameshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F14CC2B763A0600249395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F14CE2B763A0600249395 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B52022F2B82E11F004F5EC1 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				2B5202302B82E159004F5EC1 /* DetailVCStackView.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
 		2B8F14C02B763A0600249395 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		2B8F14E12B763A4200249395 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B52022F2B82E11F004F5EC1 /* DetailVC */,
 				2BB6F0C12B80A3D200EC8F3D /* ResultVC */,
 				2B94024D2B7A58F300687FE8 /* SerchVC */,
 				2B94024B2B7A570200687FE8 /* ScreenTransitionButton.swift */,
@@ -218,6 +229,7 @@
 				2BB6F0C72B80B43B00EC8F3D /* ResultCard.swift in Sources */,
 				2B8F14CF2B763A0600249395 /* SceneDelegate.swift in Sources */,
 				2BB6F0BF2B809F4300EC8F3D /* ResultViewController.swift in Sources */,
+				2B5202312B82E159004F5EC1 /* DetailVCStackView.swift in Sources */,
 				2BAA02552B7CC66F009D27CA /* RestaurantData.swift in Sources */,
 				2B94024A2B7914E400687FE8 /* DistanceSegmentedControl.swift in Sources */,
 				2BB6F0C52B80B16900EC8F3D /* RestaurantCollectionViewCell.swift in Sources */,

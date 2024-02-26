@@ -87,7 +87,6 @@ class SearchViewController: UIViewController {
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
-        
     }
 }
 extension SearchViewController: CLLocationManagerDelegate {

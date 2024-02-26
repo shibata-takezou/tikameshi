@@ -9,24 +9,27 @@ import UIKit
 
 class ResultViewController: UIViewController {
     var restaurants = [Restaurant]()
+    var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.register(RestaurantCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "結果"
         self.view.backgroundColor = .vcColor
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height), collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.register(RestaurantCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        self.view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.view.addSubview(self.collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
-            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
-            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+            self.collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+            self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+            self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
         ])
     }
 }

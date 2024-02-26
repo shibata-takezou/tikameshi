@@ -26,8 +26,8 @@ class RestaurantManager {
                     completion([])
                     return
                 }
-                if let safeData = data {
-                    let restaurants = self.parseJSON(restaurantData: safeData)
+                if let data = data {
+                    let restaurants = self.parseJSON(restaurantData: data)
                     completion(restaurants)
                 }
             }

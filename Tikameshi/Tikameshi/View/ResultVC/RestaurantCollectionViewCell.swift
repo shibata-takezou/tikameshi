@@ -9,12 +9,6 @@ import UIKit
 
 class RestaurantCollectionViewCell: UICollectionViewCell {
     private var resultCard: ResultCard?
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     func setUpContents(imageURL: String, name: String, access: String) {
         let logoImageView = URLImageView(logoImageURL: imageURL)
         logoImageView.loadImageFromURL(url: URL(string: imageURL)!) { [weak self] image in
